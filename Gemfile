@@ -54,9 +54,13 @@ end
 gem 'tzinfo-data'
 
 gem 'devise'
-gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'
+#gem 'bootstrap', '~> 4.4.1'
+#gem 'jquery-rails'
+
+gem "bulma-rails"
 
 gem 'net-smtp'
 gem 'net-imap'
 gem 'net-pop'
+
+gem 'carrierwave', '~> 2.0'
