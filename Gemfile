@@ -55,7 +55,7 @@ gem 'tzinfo-data'
 
 gem 'devise'
 #gem 'bootstrap', '~> 4.4.1'
-#gem 'jquery-rails'
+gem 'jquery-rails'
 
 gem "bulma-rails"
 

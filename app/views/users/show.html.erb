@@ -8,6 +8,7 @@
   </div>
 </section>
 
+
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -15,11 +16,12 @@
         <div class="columns is-centered">
           <div class="column is-4">
             <figure class="image is-128x128"  style="margin-left: auto; margin-right: auto;">
-<% if @user.image? %>
-<%= image_tag @user.image.url, class: "profile_image is-rounded"  %>
-<% else %>
-<%= image_tag "no-image.png" %>
-<% end %>            </figure>
+              <% if @user.image? %>
+                <%= image_tag @user.image.url, class: "profile_image is-rounded"  %>
+              <% else %>
+                <%= image_tag "no-image.png" %>
+              <% end %>           
+            </figure>
           </div>
           <div class="column is-8">
             <table class="table is-fullwidth">
@@ -34,9 +36,20 @@
                 <td>
                     <%= link_to "編集", edit_user_path(@user), class: "button is-primary" %>
                 </td>
+                <% else %>
+                  <% if @user.is_followed_by?(current_user) %>
+                    <td>
+                      <%= button_to "フォロー解除", user_relationships_path(@user), method: :delete, class: "button is-danger" %>
+                    </td>
+                  <% else %>
+                    <td>
+                      <%= button_to "フォロー", user_relationships_path(@user), method: :post, class: "button is-info" %>
+                    </td>
+                  <% end %>
                 <% end %>
               </tr>
             </table>
+                <p class="text-small"><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー<%= link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
             <table class="table is-fullwidth">
               <tr>
                 <td>

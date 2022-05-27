@@ -22,11 +22,11 @@
                   <%= link_to user_path(user) do %>
 
 
-<% if user.image? %>
-<%= image_tag user.image.url, class: "profile_image is-rounded"  %>
-<% else %>
-<%= image_tag "no-image.png" %>
-<% end %>
+                    <% if user.image? %>
+                    <%= image_tag user.image.url, class: "profile_image is-rounded"  %>
+                    <% else %>
+                    <%= image_tag "no-image.png" %>
+                    <% end %>
 
                   <% end %>
                 </figure>
