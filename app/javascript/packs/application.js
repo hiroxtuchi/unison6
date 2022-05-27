@@ -13,7 +13,6 @@ Turbolinks.start()
 ActiveStorage.start()
 
 require("jquery")
-require("jquery_ujs")
 
 import 'bootstrap'
 import '../src/application.scss'
